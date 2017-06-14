@@ -3,7 +3,10 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/ScreenshotsShare.iml" filepath="$PROJECT_DIR$/ScreenshotsShare.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ScreenshotsShare.iml" filepath="$PROJECT_DIR$/ScreenshotsShare.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/screensshotssharelibrary/screensshotssharelibrary.iml" filepath="$PROJECT_DIR$/screensshotssharelibrary/screensshotssharelibrary.iml" />
     </modules>
   </component>
 </project>

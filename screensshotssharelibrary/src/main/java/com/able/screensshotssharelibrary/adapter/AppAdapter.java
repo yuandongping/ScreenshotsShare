@@ -1,4 +1,4 @@
-package com.able.screenshotsshare.adapter;
+package com.able.screensshotssharelibrary.adapter;
 
 /**
  * Created by dongping-yuan on 2017/6/14.
@@ -11,8 +11,8 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 
-import com.able.screenshotsshare.R;
-import com.able.screenshotsshare.bean.ShareApp;
+import com.able.screensshotssharelibrary.R;
+import com.able.screensshotssharelibrary.bean.ShareApp;
 
 import java.util.ArrayList;
 

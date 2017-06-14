@@ -8,15 +8,15 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Toast;
 
-import com.able.screenshotsshare.adapter.AppAdapter;
-import com.able.screenshotsshare.bean.ShareApp;
-import com.able.screenshotsshare.mvp.ScreenShotSharePresenter;
-import com.able.screenshotsshare.mvp.ScreenShotSharePresenterImpl;
-import com.able.screenshotsshare.mvp.ScreenShotShareView;
-import com.able.screenshotsshare.utils.BitmapUtils;
-import com.able.screenshotsshare.utils.FileUtils;
-import com.able.screenshotsshare.utils.ShareAppUtils;
-import com.able.screenshotsshare.view.HorizontalListView;
+import com.able.screensshotssharelibrary.adapter.AppAdapter;
+import com.able.screensshotssharelibrary.bean.ShareApp;
+import com.able.screensshotssharelibrary.mvp.ScreenShotSharePresenter;
+import com.able.screensshotssharelibrary.mvp.ScreenShotSharePresenterImpl;
+import com.able.screensshotssharelibrary.mvp.ScreenShotShareView;
+import com.able.screensshotssharelibrary.utils.BitmapUtils;
+import com.able.screensshotssharelibrary.utils.FileUtils;
+import com.able.screensshotssharelibrary.utils.ShareAppUtils;
+import com.able.screensshotssharelibrary.view.HorizontalListView;
 
 import java.util.ArrayList;
 

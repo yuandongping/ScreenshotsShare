@@ -1,10 +1,10 @@
-package com.able.screenshotsshare.mvp;
+package com.able.screensshotssharelibrary.mvp;
 
 import android.content.Context;
 
-import com.able.screenshotsshare.R;
-import com.able.screenshotsshare.bean.ShareApp;
-import com.able.screenshotsshare.utils.ShareAppUtils;
+import com.able.screensshotssharelibrary.R;
+import com.able.screensshotssharelibrary.bean.ShareApp;
+import com.able.screensshotssharelibrary.utils.ShareAppUtils;
 
 import java.util.ArrayList;
 

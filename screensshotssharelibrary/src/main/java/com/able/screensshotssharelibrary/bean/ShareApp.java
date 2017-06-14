@@ -1,4 +1,4 @@
-package com.able.screenshotsshare.bean;
+package com.able.screensshotssharelibrary.bean;
 
 /**
  * 分享的app平台

@@ -1,4 +1,4 @@
-package com.able.screenshotsshare.utils;
+package com.able.screensshotssharelibrary.utils;
 
 import android.app.Activity;
 import android.graphics.Bitmap;

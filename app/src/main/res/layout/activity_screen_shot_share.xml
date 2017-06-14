@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/share_bg">
 
-    <com.able.screenshotsshare.view.HorizontalListView
+    <com.able.screensshotssharelibrary.view.HorizontalListView
         android:id="@+id/horizontalListView"
         android:layout_width="match_parent"
         android:layout_alignParentBottom="true"

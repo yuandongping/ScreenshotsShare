@@ -1,6 +1,6 @@
-package com.able.screenshotsshare.mvp;
+package com.able.screensshotssharelibrary.mvp;
 
-import com.able.screenshotsshare.bean.ShareApp;
+import com.able.screensshotssharelibrary.bean.ShareApp;
 
 import java.util.ArrayList;
 

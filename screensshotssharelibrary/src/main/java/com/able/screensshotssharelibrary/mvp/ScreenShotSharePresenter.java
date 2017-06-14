@@ -1,4 +1,4 @@
-package com.able.screenshotsshare.mvp;
+package com.able.screensshotssharelibrary.mvp;
 
 import android.content.Context;
 

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#172B68</color>
+    <color name="colorPrimaryDark">#172B68</color>
+    <color name="colorAccent">#172B68</color>
+
+    <color name="theme_color">#1CA3FC</color>
+
+    <color name="start_bg">#172B68</color>
+    <color name="end_bg">#52B0C1</color>
+
+    <color name="white">#FFFFFF</color>
+
+    <color name="bg_wechat">#3FB30A</color>
+    <color name="bg_wechat_circle">#3FB30A</color>
+    <color name="bg_qq">#4390FE</color>
+    <color name="bg_sina">#E6414A</color>
+    <color name="bg_facebook">#2D44BA</color>
+    <color name="bg_twitter">#45A2E2</color>
+    <color name="bg_whatsapp">#39A202</color>
+    <color name="bg_more">#f4ea2a</color>
+    <color name="bg_download">#64C726</color>
+    <color name="bg_gray">#BCBCBC</color>
+
+</resources>

@@ -1,8 +1,12 @@
 package com.able.screenshotsshare;
 
+import android.Manifest;
+import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
@@ -27,6 +31,10 @@ import java.util.ArrayList;
 public class ScreenShotShareActivity extends AppCompatActivity implements ScreenShotShareView, AdapterView.OnItemClickListener {
 
     private static final String TAG = ScreenShotShareActivity.class.getSimpleName();
+
+    private static final int MY_PERMISSIONS_REQUEST_WRITE_EXTERNAL_STORAGE = 1;
+
+
     ArrayList<ShareApp> shareAppList = new ArrayList<>();
     HorizontalListView horizontalListView;
     ScreenShotSharePresenter presenter;
@@ -42,7 +50,9 @@ public class ScreenShotShareActivity extends AppCompatActivity implements Screen
 
     /**申请权限*/
     private void requestPermissions() {
-
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, MY_PERMISSIONS_REQUEST_WRITE_EXTERNAL_STORAGE);
+        }
     }
 
     private void initView() {
@@ -67,14 +77,32 @@ public class ScreenShotShareActivity extends AppCompatActivity implements Screen
 
     @Override
     public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-        Bitmap b = BitmapUtils.shotScreen(ScreenShotShareActivity.this, null, null);
-        Uri uri = FileUtils.saveBitmapToFile("wristband" + System.currentTimeMillis() + ".png", b);
-        b = null;
         if(!shareAppList.get(i).enable){
             Toast.makeText(this, "未安装"+shareAppList.get(i).appName+"，不能分享", Toast.LENGTH_SHORT).show();
             return;
+        }else{
+            if (ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
+                ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, MY_PERMISSIONS_REQUEST_WRITE_EXTERNAL_STORAGE);
+            }else {
+                Bitmap b = BitmapUtils.shotScreen(ScreenShotShareActivity.this, null, null);
+                Uri uri = FileUtils.saveBitmapToFile("wristband" + System.currentTimeMillis() + ".png", b);
+                b = null;
+                ShareAppUtils.shareToApp(this, uri, shareAppList.get(i).shareClassName);
+            }
         }
-        ShareAppUtils.shareToApp(this, uri, shareAppList.get(i).shareClassName);
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
+        if (requestCode == MY_PERMISSIONS_REQUEST_WRITE_EXTERNAL_STORAGE) {
+            if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+            } else {
+                // Permission Denied
+                Toast.makeText(ScreenShotShareActivity.this, "Permission Denied", Toast.LENGTH_SHORT).show();
+            }
+            return;
+        }
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
     }
 
 }

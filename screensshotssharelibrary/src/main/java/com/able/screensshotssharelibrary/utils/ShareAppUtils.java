@@ -7,6 +7,7 @@ import android.content.pm.ActivityInfo;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
+import android.graphics.Bitmap;
 import android.net.Uri;
 import android.text.TextUtils;
 import android.util.Log;
@@ -119,28 +120,31 @@ public class ShareAppUtils {
         return false;
     }
 
-    public static void shareToApp(Context context, Uri uri, String shareClassName) {
+    public static void shareToApp(Activity activity, String shareClassName) {
+        Bitmap b = BitmapUtils.shotScreen(activity, null, null);
+        Uri uri = FileUtils.saveBitmapToFile("wristband" + System.currentTimeMillis() + ".png", b);
+        b = null;
         if(TextUtils.equals(weChatShareClassName, shareClassName)){
-            shareToWeChatFriend(context, uri);
+            shareToWeChatFriend(activity, uri);
         }else if(TextUtils.equals(weChatCircleShareClassName, shareClassName)){
-            shareToWeChatCircle(context, uri);
+            shareToWeChatCircle(activity, uri);
         }else if(TextUtils.equals(qqShareClassName, shareClassName)){
-            shareToQQFriend(context, uri);
+            shareToQQFriend(activity, uri);
         }else if(TextUtils.equals(sinaShareClassName, shareClassName)){
-            shareToSina(context, uri);
+            shareToSina(activity, uri);
         }else if(TextUtils.equals(facebookShareClassName, shareClassName)){
-            shareToFacebook(context, uri);
+            shareToFacebook(activity, uri);
         }else if(TextUtils.equals(twitterShareClassName, shareClassName)){
-            shareToTwitter(context, uri);
+            shareToTwitter(activity, uri);
         }else if(TextUtils.equals(whatsAppShareClassName, shareClassName)){
-            shareToWhatsApp(context, uri);
+            shareToWhatsApp(activity, uri);
         }else if(TextUtils.equals("more", shareClassName)){
-            shareToAll(context, uri);
+            shareToAll(activity, uri);
         }else if(TextUtils.equals("download", shareClassName)){
             try {
                 File file = new File(new URI(uri.toString()));
-                FileUtils.albumScan(context, file.getAbsolutePath());
-                Toast.makeText(context, "图片保存成功！", Toast.LENGTH_SHORT).show();
+                FileUtils.albumScan(activity, file.getAbsolutePath());
+                Toast.makeText(activity, "图片保存成功！", Toast.LENGTH_SHORT).show();
             } catch (URISyntaxException e) {
                 e.printStackTrace();
             }

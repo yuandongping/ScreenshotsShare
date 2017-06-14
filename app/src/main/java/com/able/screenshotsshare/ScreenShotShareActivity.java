@@ -2,8 +2,6 @@ package com.able.screenshotsshare;
 
 import android.Manifest;
 import android.content.pm.PackageManager;
-import android.graphics.Bitmap;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
@@ -17,8 +15,6 @@ import com.able.screensshotssharelibrary.bean.ShareApp;
 import com.able.screensshotssharelibrary.mvp.ScreenShotSharePresenter;
 import com.able.screensshotssharelibrary.mvp.ScreenShotSharePresenterImpl;
 import com.able.screensshotssharelibrary.mvp.ScreenShotShareView;
-import com.able.screensshotssharelibrary.utils.BitmapUtils;
-import com.able.screensshotssharelibrary.utils.FileUtils;
 import com.able.screensshotssharelibrary.utils.ShareAppUtils;
 import com.able.screensshotssharelibrary.view.HorizontalListView;
 
@@ -84,10 +80,7 @@ public class ScreenShotShareActivity extends AppCompatActivity implements Screen
             if (ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
                 ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, MY_PERMISSIONS_REQUEST_WRITE_EXTERNAL_STORAGE);
             }else {
-                Bitmap b = BitmapUtils.shotScreen(ScreenShotShareActivity.this, null, null);
-                Uri uri = FileUtils.saveBitmapToFile("wristband" + System.currentTimeMillis() + ".png", b);
-                b = null;
-                ShareAppUtils.shareToApp(this, uri, shareAppList.get(i).shareClassName);
+                ShareAppUtils.shareToApp(this, shareAppList.get(i).shareClassName);
             }
         }
     }

@@ -14,6 +14,6 @@ allprojects {
 
 ```
 dependencies {
-	        compile 'com.github.yuandongping:ScreenshotsShare:1.0.2'
+	        compile 'com.github.yuandongping:ScreenshotsShare:1.0.4'
 	}
 ```

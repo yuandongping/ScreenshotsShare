@@ -13,6 +13,8 @@ import android.text.TextUtils;
 import android.util.Log;
 import android.widget.Toast;
 
+import com.able.screensshotssharelibrary.R;
+
 import java.io.File;
 import java.net.URI;
 import java.net.URISyntaxException;
@@ -46,7 +48,7 @@ public class ShareAppUtils {
     public final static String googleShareClassName = "com.google.android.apps.hangouts.phone.ShareIntentActivity";
     public final static String facebookShareClassName = "com.facebook.messenger.intents.ShareIntentHandler";
     public final static String twitterShareClassName = "com.twitter.android.composer.ComposerActivity";
-    public final static String whatsAppShareClassName = "";
+    public final static String whatsAppShareClassName = "com.whatsapp.ContactPicker";
 
     private static final String TAG = ShareAppUtils.class.getSimpleName();
 
@@ -144,7 +146,7 @@ public class ShareAppUtils {
             try {
                 File file = new File(new URI(uri.toString()));
                 FileUtils.albumScan(activity, file.getAbsolutePath());
-                Toast.makeText(activity, "图片保存成功！", Toast.LENGTH_SHORT).show();
+                Toast.makeText(activity, activity.getResources().getString(R.string.image_saved_successfully), Toast.LENGTH_SHORT).show();
             } catch (URISyntaxException e) {
                 e.printStackTrace();
             }
@@ -263,6 +265,8 @@ public class ShareAppUtils {
 //packageName=com.twitter.android-----activityName=com.twitter.android.composer.ComposerActivity
 //packageName=com.twitter.android-----activityName=com.twitter.app.dm.DMActivity
 
+//    whatsapp
+//packageName=com.whatsapp-----activityName=com.whatsapp.ContactPicker
 
 
 }

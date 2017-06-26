@@ -17,7 +17,7 @@ public class ScreenShotShareModelImpl implements ScreenShotShareModel {
     public void getShareApp(Context context, OnScreenShotShareListener listener) {
         ArrayList<ShareApp> shareAppList = new ArrayList<>();
         ShareApp shareAppItem01 = new ShareApp();
-        shareAppItem01.appName = "微信";
+        shareAppItem01.appName = context.getResources().getString(R.string.wechat);
         shareAppItem01.packageName = ShareAppUtils.weChatPackageName;
         shareAppItem01.shareClassName = ShareAppUtils.weChatShareClassName;
         shareAppItem01.appIcon = R.drawable.wechat;
@@ -29,7 +29,7 @@ public class ScreenShotShareModelImpl implements ScreenShotShareModel {
         }
 
         ShareApp shareAppItem02 = new ShareApp();
-        shareAppItem02.appName = "微信朋友圈";
+        shareAppItem02.appName = context.getResources().getString(R.string.wechat_circle);
         shareAppItem02.packageName = ShareAppUtils.weChatPackageName;
         shareAppItem02.shareClassName = ShareAppUtils.weChatCircleShareClassName;
         shareAppItem02.appIcon = R.drawable.wechat_circle;
@@ -41,7 +41,7 @@ public class ScreenShotShareModelImpl implements ScreenShotShareModel {
         }
 
         ShareApp shareAppItem03 = new ShareApp();
-        shareAppItem03.appName = "QQ";
+        shareAppItem03.appName = context.getResources().getString(R.string.qq);
         shareAppItem03.packageName = ShareAppUtils.qqPackageName;
         shareAppItem03.shareClassName = ShareAppUtils.qqShareClassName;
         shareAppItem03.appIcon = R.drawable.qq;
@@ -53,7 +53,7 @@ public class ScreenShotShareModelImpl implements ScreenShotShareModel {
         }
 
         ShareApp shareAppItem04 = new ShareApp();
-        shareAppItem04.appName = "新浪微博";
+        shareAppItem04.appName = context.getResources().getString(R.string.sina);
         shareAppItem04.packageName = ShareAppUtils.sinaPackageName;
         shareAppItem04.shareClassName = ShareAppUtils.sinaShareClassName;
         shareAppItem04.appIcon = R.drawable.sina;
@@ -65,7 +65,7 @@ public class ScreenShotShareModelImpl implements ScreenShotShareModel {
         }
 
         ShareApp shareAppItem05 = new ShareApp();
-        shareAppItem05.appName = "Facebook";
+        shareAppItem05.appName = context.getResources().getString(R.string.facebook);
         shareAppItem05.packageName = ShareAppUtils.facebookPackageName;
         shareAppItem05.shareClassName = ShareAppUtils.facebookShareClassName;
         shareAppItem05.appIcon = R.drawable.facebook;
@@ -77,7 +77,7 @@ public class ScreenShotShareModelImpl implements ScreenShotShareModel {
         }
 
         ShareApp shareAppItem06 = new ShareApp();
-        shareAppItem06.appName = "Twitter";
+        shareAppItem06.appName = context.getResources().getString(R.string.twitter);
         shareAppItem06.packageName = ShareAppUtils.twitterPackageName;
         shareAppItem06.shareClassName = ShareAppUtils.twitterShareClassName;
         shareAppItem06.appIcon = R.drawable.twitter;
@@ -89,7 +89,7 @@ public class ScreenShotShareModelImpl implements ScreenShotShareModel {
         }
 
         ShareApp shareAppItem07 = new ShareApp();
-        shareAppItem07.appName = "whatsapp";
+        shareAppItem07.appName = context.getResources().getString(R.string.whatsapp);
         shareAppItem07.packageName = ShareAppUtils.whatsAppPackageName;
         shareAppItem07.shareClassName = ShareAppUtils.whatsAppShareClassName;
         shareAppItem07.appIcon = R.drawable.whatsapp;
@@ -102,7 +102,7 @@ public class ScreenShotShareModelImpl implements ScreenShotShareModel {
 
 
         ShareApp shareAppItem08 = new ShareApp();
-        shareAppItem08.appName = "更多";
+        shareAppItem08.appName = context.getResources().getString(R.string.more);
         shareAppItem08.packageName = "more";
         shareAppItem08.shareClassName = "more";
         shareAppItem08.appIcon = R.drawable.more;
@@ -111,7 +111,7 @@ public class ScreenShotShareModelImpl implements ScreenShotShareModel {
 
 
         ShareApp shareAppItem09 = new ShareApp();
-        shareAppItem09.appName = "下载";
+        shareAppItem09.appName = context.getResources().getString(R.string.download);
         shareAppItem09.packageName = "download";
         shareAppItem09.shareClassName = "download";
         shareAppItem09.appIcon = R.drawable.download;

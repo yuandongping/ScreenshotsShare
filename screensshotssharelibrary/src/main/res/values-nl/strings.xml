@@ -4,13 +4,13 @@
     <string name="wechat">wechat</string>
     <string name="wechat_circle">wechat_circle</string>
     <string name="qq">QQ</string>
-    <string name="sina">wechat_circle</string>
+    <string name="sina">Sina Weibo</string>
     <string name="facebook">Facebook</string>
     <string name="twitter">Twitter</string>
     <string name="whatsapp">whatsapp</string>
-    <string name="more">wechat_circle</string>
-    <string name="download">download</string>
+    <string name="more">meer</string>
+    <string name="download">Download</string>
 
-    <string name="image_saved_successfully">Image saved successfully！</string>
+    <string name="image_saved_successfully">Foto succesvol opgeslagen！</string>
 
 </resources>

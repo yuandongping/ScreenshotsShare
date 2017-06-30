@@ -11,6 +11,7 @@ import android.graphics.Bitmap;
 import android.net.Uri;
 import android.text.TextUtils;
 import android.util.Log;
+import android.view.View;
 import android.widget.Toast;
 
 import com.able.screensshotssharelibrary.R;
@@ -122,10 +123,14 @@ public class ShareAppUtils {
         return false;
     }
 
-    public static void shareToApp(Activity activity, String shareClassName) {
-        Bitmap b = BitmapUtils.shotScreen(activity, null, null);
-        Uri uri = FileUtils.saveBitmapToFile("wristband" + System.currentTimeMillis() + ".png", b);
-        b = null;
+    public static void shareToApp(Activity activity, String shareClassName, View addView, int addViewWidth, int addViewHeight, View removeView) {
+        Bitmap old = BitmapUtils.shotScreen(activity, removeView);
+        Bitmap add = BitmapUtils.getViewBitmap(addView, addViewWidth, addViewHeight);
+        Bitmap bItem = BitmapUtils.mergeBitmap_TB(old, add, true);
+        Uri uri = FileUtils.saveBitmapToFile("wristband" + System.currentTimeMillis() + ".png", bItem);
+        old = null;
+        add = null;
+        bItem = null;
         if(TextUtils.equals(weChatShareClassName, shareClassName)){
             shareToWeChatFriend(activity, uri);
         }else if(TextUtils.equals(weChatCircleShareClassName, shareClassName)){
@@ -151,7 +156,6 @@ public class ShareAppUtils {
                 e.printStackTrace();
             }
         }
-
     }
 
     /**微信朋友好友*/

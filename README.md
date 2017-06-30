@@ -1,7 +1,7 @@
 # ScreenshotsShare
 截图分享
 
-###使用
+### 使用
 
 ```
 allprojects {
@@ -14,6 +14,6 @@ allprojects {
 
 ```
 dependencies {
-	        compile 'com.github.yuandongping:ScreenshotsShare:1.0.4'
+	        compile 'com.github.yuandongping:ScreenshotsShare:1.0.5'
 	}
 ```
